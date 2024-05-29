@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {Person} = require('./models/Person');
+const { Person } = require('./models/Person');
 
 async function start(){
     const connectionString = 'mongodb://localhost:27017/test';
@@ -10,6 +10,16 @@ async function start(){
     });
 
     console.log('Database connected!')
-    Person.find({}).then(data => console.log(data));
+
+    const myPerson = new Person({
+        name: 'Peter',
+        age: 27
+    });
+
+    await myPerson.save();
+
+    
+    const document = await Person.find({})
+    console.log(document)
 }
 start();
