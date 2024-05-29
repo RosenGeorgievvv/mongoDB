@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {Person} = require('./models/Person');
 
 async function start(){
     const connectionString = 'mongodb://localhost:27017/test';
