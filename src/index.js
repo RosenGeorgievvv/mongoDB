@@ -10,4 +10,4 @@ async function start(){
 
     console.log('Database connected!')
 }
-start()
+start();
