@@ -10,5 +10,6 @@ async function start(){
     });
 
     console.log('Database connected!')
+    Person.find({}).then(data => console.log(data));
 }
 start();
