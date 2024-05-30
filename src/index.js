@@ -11,7 +11,10 @@ async function start(){
 
     console.log('Database connected!')
     
-    const myPerson = await Person.findOne({name: "John"});
+    const myPerson = await Person.findOne({ name: "John" });
+
     console.log(myPerson.sayHello());
+
+    mongoose.disconnect();
 }
 start();
