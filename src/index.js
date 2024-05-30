@@ -10,16 +10,8 @@ async function start(){
     });
 
     console.log('Database connected!')
-
-    const myPerson = new Person({
-        name: 'Peter',
-        age: 27
-    });
-
-    await myPerson.save();
-
     
-    const document = await Person.find({})
-    console.log(document)
+    const myPerson = await Person.findOne({name: "John"});
+    console.log(myPerson.sayHello());
 }
 start();
